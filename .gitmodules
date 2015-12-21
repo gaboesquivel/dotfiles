@@ -1,0 +1,4 @@
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/gabosquivel/oh-my-zsh.git
+	branch = gabos-oh-my-zsh
