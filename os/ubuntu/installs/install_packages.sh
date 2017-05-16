@@ -39,6 +39,26 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    if ! package_is_installed 'yarn'; then
+
+        add_key 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+        print_result $? "Yarn (add key)"
+
+        add_to_source_list 'https://dl.yarnpkg.com/debian/ stable main' 'yarn.list'
+        print_result $? "Yarn (add to package resource list)"
+
+        update
+
+        install_package 'Yarn' 'yarn'
+
+        printf '\n'
+
+    else
+        print_success 'Yarn'
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     if ! package_is_installed 'google-chrome-unstable'; then
 
         add_key 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
@@ -90,6 +110,27 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    if ! package_is_installed 'scudcloud'; then
+
+        printf '\n'
+
+        add_ppa 'rael-gc/scudcloud'
+        print_result $? "ScudCloud(add PPA)"
+
+        echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+
+        update
+
+        install_package 'ScudCloud' 'scudcloud'
+
+        printf '\n'
+
+    else
+        print_success 'ScudCloud Slack Client'
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     install_package 'Flash' 'flashplugin-installer'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -107,30 +148,6 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'ImageMagick' 'imagemagick'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed 'opera'; then
-
-        printf '\n'
-
-        add_key 'http://deb.opera.com/archive.key'
-        print_result $? "Opera (add key)"
-
-        add_to_source_list 'http://deb.opera.com/opera/ stable non-free' 'opera.list'
-        print_result $? "Opera (add to package resource list)"
-
-        update
-
-        install_package 'Opera' 'opera'
-        install_package 'Opera Next' 'opera-next'
-
-        printf '\n'
-
-    else
-        print_success 'Opera'
-        print_success 'Opera Next'
-    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
