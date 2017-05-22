@@ -19,7 +19,8 @@ main() {
     #install_package 'Ubuntu Restricted Extras' 'ubuntu-restricted-extras'
 
     # Canonical Partners
-    add_to_source_list '[arch=amd64] http://archive.canonical.com/ubuntu '$(lsb_release -sc)' partner' 'sources.list'
+    sudo dpkg --add-architecture i386
+    add_to_source_list 'http://archive.canonical.com/ubuntu '$(lsb_release -sc)' partner' 'sources.list'
     print_result $? "Canonical Partners (add to repository to resource list)"
     update
 
