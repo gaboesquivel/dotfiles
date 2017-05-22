@@ -18,6 +18,11 @@ main() {
     # in Ubuntu due to legal or copyright reasons
     #install_package 'Ubuntu Restricted Extras' 'ubuntu-restricted-extras'
 
+    # Canonical Partners
+    add_to_source_list '[arch=amd64] http://archive.canonical.com/ubuntu '$(lsb_release -sc)' partner' 'sources.list'
+    print_result $? "Canonical Partners (add to repository to resource list)"
+    update
+
     printf '\n'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -44,7 +49,7 @@ main() {
         add_key 'https://dl.yarnpkg.com/debian/pubkey.gpg'
         print_result $? "Yarn (add key)"
 
-        add_to_source_list 'https://dl.yarnpkg.com/debian/ stable main' 'yarn.list'
+        add_to_source_list '[arch=amd64] https://dl.yarnpkg.com/debian/ stable main' 'yarn.list'
         print_result $? "Yarn (add to package resource list)"
 
         update
@@ -64,7 +69,7 @@ main() {
         add_key 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
         print_result $? "Chrome Canary (add key)"
 
-        add_to_source_list 'http://dl.google.com/linux/deb/ stable main' 'google-chrome.list'
+        add_to_source_list '[arch=amd64] http://dl.google.com/linux/deb/ stable main' 'google-chrome.list'
         print_result $? "Chrome Canary (add to package resource list)"
 
         update
@@ -110,27 +115,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if ! package_is_installed 'scudcloud'; then
-
-        printf '\n'
-
-        add_ppa 'rael-gc/scudcloud'
-        print_result $? "ScudCloud(add PPA)"
-
-        echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-
-        update
-
-        install_package 'ScudCloud' 'scudcloud'
-
-        printf '\n'
-
-    else
-        print_success 'ScudCloud Slack Client'
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package 'Flash' 'flashplugin-installer'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -172,6 +156,9 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'Zopfli' 'zopfli'
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'Skype' 'skype'
 
 }
 
