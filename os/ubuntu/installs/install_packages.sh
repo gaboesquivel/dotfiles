@@ -161,6 +161,11 @@ main() {
 
     install_package 'Skype' 'skype'
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_deb_package 'Slack' 'slack-desktop' 'https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.0-amd64.deb'
+
+
 }
 
 main

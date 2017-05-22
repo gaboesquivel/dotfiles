@@ -34,6 +34,29 @@ install_package() {
 
 }
 
+install_deb_package() {
+
+    declare -r PACKAGE_URL="$3"
+    declare -r PACKAGE="$2"
+    declare -r PACKAGE_READABLE_NAME="$1"
+    declare -r FILENAME=$(basename "$PACKAGE_URL")
+
+    if ! package_is_installed "$PACKAGE"; then
+
+        {
+          sudo wget -q $PACKAGE_URL -P /tmp && \
+          sudo dpkg -i --force-overwrite /tmp/$FILENAME 2> /dev/null && \
+          sudo rm -f /tmp/$FILENAME
+        } || {
+          print_error "$PACKAGE_READABLE_NAME"
+        }
+
+    else
+        print_success "$PACKAGE_READABLE_NAME"
+    fi
+
+}
+
 package_is_installed() {
     dpkg -s "$1" &> /dev/null
 }
