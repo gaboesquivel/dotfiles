@@ -168,6 +168,47 @@ main() {
 
     install_deb_package 'Hyper Term' 'hyper' 'https://hyper-updates.now.sh/download/linux_deb'
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if ! package_is_installed 'pip'; then
+
+        printf '\n'
+
+        {
+          sudo wget -q https://bootstrap.pypa.io/get-pip.py -P /tmp && \
+          python /tmp/get-pip.py --user && \
+          sudo rm -f /tmp/get-pip.py && \
+          echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc && \
+          source  ~/.bashrc && \
+          print_success 'pip'
+        } || {
+          print_error "pip"
+        }
+
+        printf '\n'
+
+    else
+        print_success 'pip'
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if ! package_is_installed 'aws'; then
+
+        printf '\n'
+
+        {
+          pip install awscli --upgrade --user && \
+          print_success 'aws'
+        } || {
+          print_error "aws"
+        }
+
+        printf '\n'
+
+    else
+        print_success 'aws'
+    fi
 
 }
 
