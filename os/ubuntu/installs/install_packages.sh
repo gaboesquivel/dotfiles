@@ -157,13 +157,20 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'Zopfli' 'zopfli'
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'Skype' 'skype'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    install_package 'Flash Player' 'adobe-flashplugin'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     install_deb_package 'Slack' 'slack-desktop' 'https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.0-amd64.deb'
+    
+    install_deb_package 'Hyper Term' 'hyper' 'https://hyper-updates.now.sh/download/linux_deb'
 
 
 }
