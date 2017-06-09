@@ -210,6 +210,10 @@ main() {
         print_success 'aws'
     fi
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'jq' 'jq'
+
 }
 
 main
