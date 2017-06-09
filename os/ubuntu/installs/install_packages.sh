@@ -116,10 +116,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package 'Flash' 'flashplugin-installer'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package 'GIMP' 'gimp'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
