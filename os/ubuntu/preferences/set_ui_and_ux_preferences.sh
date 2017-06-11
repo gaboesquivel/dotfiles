@@ -36,9 +36,7 @@ set_ui_and_ux_preferences() {
         'chromium-browser.desktop',
         'google-chrome.desktop',
         'firefox.desktop',
-        'firefox-trunk.desktop',
-        'opera-browser.desktop',
-        'opera-next-browser.desktop'
+        'firefox-trunk.desktop'
     ]\"" \
         'Set Launcher favorites'
 
