@@ -93,6 +93,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    install_package 'UnZip' 'unzip'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     install_package 'Dropbox' 'nautilus-dropbox'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
