@@ -20,8 +20,9 @@ main() {
 
     # Canonical Partners
     sudo dpkg --add-architecture i386
-    add_to_source_list 'http://archive.canonical.com/ubuntu '$(lsb_release -sc)' partner' 'sources.list'
-    print_result $? "Canonical Partners (add to repository to resource list)"
+
+    # add_to_source_list 'http://archive.canonical.com/ubuntu '$(lsb_release -sc)' partner' 'sources.list'
+    # print_result $? "Canonical Partners (add to repository to resource list)"
     update
 
     printf '\n'
@@ -171,6 +172,8 @@ main() {
     install_deb_package 'Slack' 'slack' 'https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.0-amd64.deb'
 
     install_deb_package 'Hyper Term' 'hyper' 'https://hyper-updates.now.sh/download/linux_deb'
+
+    # install_deb_package 'Brave Browser' 'brave' 'https://laptop-updates.brave.com/latest/debian64'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
