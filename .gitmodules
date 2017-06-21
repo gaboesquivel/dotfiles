@@ -2,3 +2,6 @@
 	path = zsh/oh-my-zsh
 	url = https://github.com/gabosquivel/oh-my-zsh.git
 	branch = gabos-oh-my-zsh
+[submodule "prezto"]
+	path = prezto
+	url = git@github.com:gaboesquivel/prezto.git

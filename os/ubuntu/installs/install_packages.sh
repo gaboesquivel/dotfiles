@@ -220,6 +220,8 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'jq' 'jq'
+    
+    install_package 'zsh' 'zsh'
 
 }
 

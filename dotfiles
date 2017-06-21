@@ -331,6 +331,17 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info 'ZShell'
+
+    ask_for_confirmation 'Do you want to make zsh your default shell?'
+    printf '\n'
+
+    if answer_is_yes; then
+        chsh -s /bin/zsh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_info 'Restart'
 
     ask_for_confirmation 'Do you want to restart?'
@@ -342,4 +353,5 @@ main() {
 
 }
 
+3.0
 main
