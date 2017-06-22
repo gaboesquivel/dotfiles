@@ -6,7 +6,13 @@ cd "$(dirname "$BASH_SOURCE")" \
 declare -a FILES_TO_SYMLINK=(
 
     'zsh/zshrc'
-    'zpresto'
+    'zprezto'
+    'zprezto/runcoms/zlogin'
+    'zprezto/runcoms/zlogout'
+    'zprezto/runcoms/zprestorc'
+    'zprezto/runcoms/zprofile'
+    'zprezto/runcoms/zshenv'
+    'zprezto/runcoms/zshrc'
     'hyper/hyper'
 
     'git/gitattributes'

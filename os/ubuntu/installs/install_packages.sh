@@ -1,5 +1,12 @@
 #/bin/bash
 
+# if [ ! -z "$BASH_SOURCE" -a "$BASH_SOURCE" != " " ]; then
+#   echo "Bash source NOT empty"
+#   SOURCE=$BASH_SOURCE
+# else
+#   SOURCE=$0
+# fi
+
 cd "$(dirname "$BASH_SOURCE")" \
     && source '../../utils.sh' \
     && source 'utils.sh'
@@ -220,8 +227,10 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'jq' 'jq'
-    
+
     install_package 'zsh' 'zsh'
+
+    install_deb_package 'Insomnia' 'insomnia' 'https://builds.insomnia.rest/downloads/ubuntu/latest'
 
 }
 
